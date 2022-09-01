@@ -1,187 +1,241 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta utf="8">
-        <meta lang="eu">
-        <link rel="stylesheet" href="./css/normalize.css">
-        <link rel="stylesheet" href="./css/style.css">
-        <title>Konstrukt</title>
-        <meta name="viewport" content="width=device-width">
-        
-    </head>
-    <body>
-    
-        <header class="header__first">
+  <head>
+    <meta utf="8" />
+    <!-- язык en -->
+    <meta lang="eu" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Konstrukt</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> чтобы масштабирование нормально работало -->
+    <meta name="viewport" content="width=device-width" />
+  </head>
+  <body>
+    <header class="header__first">
+      <div class="header__first-logo">
+        <!-- Это можно было вставить через svg -->
+        <p class="knstrkt__txt">konstru<img src="./img/tigl.png" />t</p>
+      </div>
 
-            <div class="header__first-logo">
-                <p class="knstrkt__txt">konstru<img src="./img/tigl.png">t</p>
-            </div>
-
-            <div class="container">
-                <div class="header__pwk">
-                    <h1>PARTNER WITH KONSTUCT</h1>
-                </div>
-                <div class="header__pwk-txt">
-                    <p>An award-winning construction management firm</p>
-                </div>
-                <div class="header__sd">
-                    <p>SCROLL DOWN</p>
-                </div>
-            </div>
-        </header>
-        <main>
-        <div class="navigation">
-            <!-- Burger Menu -->
-
-            <!--  -->
-            <div class="nav__logo-img">
-                <img src="./img/mini-logo.png">
-            </div>
-            <nav class="nav__txt">
-                <a class="nav__a" href="#" alt="#">HOME</a>
-                <a class="nav__a" href="#" alt="#">ABOUT</a>
-                <a class="nav__a" href="#" alt="#">SERVICES</a>
-                <a class="nav__a" href="#">WORK</a>
-                <a class="nav__a" href="#">CONTACT</a>
-            </nav>
+      <div class="container">
+        <!-- не обязательно здесь оборачивать каждый элемент в div -->
+        <div class="header__pwk">
+          <h1>PARTNER WITH KONSTUCT</h1>
         </div>
-        
+        <div class="header__pwk-txt">
+          <p>An award-winning construction management firm</p>
+        </div>
+        <div class="header__sd">
+          <!-- Это либо ссылка либо кнопка -->
+          <p>SCROLL DOWN</p>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="navigation">
+        <!-- Burger Menu -->
 
-        
-            
-            <div class="os__h">
-                <h2 class="os__h2">OUR STORY</h2>
-                <div class="os__polosa"></div>
-            </div>
-            <div class="os">
-            <div class="os_info">
-                <h3 class="os_info-h3">Founded in 2011 by John Mathew<br>
-                    Smith, <span>Konstruct</span> has become the<br> number one construction management firm
-                </h3>
-                    
-                <p class="os_info-txt">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
-            </div>
-            <div class="os__img">
-                <div class="os__img-1">
-                <h2 class="os__img-h">we<br> plan</h2>
-                <img  src="./img/threeblc/OneImg.png" alt="#">
-                </div>
-                <div class="os__img-2">
-                <h2 class="os__img-h">we<br> manage</h2>
-                <img  src="./img/threeblc/twoImg.png" alt="#">
-                </div>
-                <div class="os__img-3">
-                <h2 class="os__img-h">we<br> build</h2>
-                <img  src="./img/threeblc/threeImg.png" alt="#">
-                </div>
-            </div>
-            </div>
+        <!--  -->
+        <div class="nav__logo-img">
+          <!-- логотип в хедере - это всегда ссылка на главную страницу -->
+          <img src="./img/mini-logo.png" />
+        </div>
+        <nav class="nav__txt">
+          <!-- Зачем в ссылках alt? -->
+          <!-- Меню должно быть списком -->
+          <a class="nav__a" href="#" alt="#">HOME</a>
+          <a class="nav__a" href="#" alt="#">ABOUT</a>
+          <a class="nav__a" href="#" alt="#">SERVICES</a>
+          <a class="nav__a" href="#">WORK</a>
+          <a class="nav__a" href="#">CONTACT</a>
+        </nav>
+      </div>
 
-            <div class="oc">
-                <div class="header__oc">
-                    <div class="oc__h">
-                        <h2 class="oc__h2">OUR CAPABILITIES</h2>
-                        <div class="oc_pls"></div>
-                    </div>
-                    <div class="oc__txt">
-                        <p class="oc__txt-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
-                    </div>
-                    <div class="oc__btm">
-                        <button class="os__btm">ALL SERVICES</button>
-                    </div>
-                </div>
+      <!-- Названия классов непонятные. os_h -> story_heading -->
+      <!-- весь блок должен быть обернуть в 1 контейнер. Можно section с общим классом container -->
+      <div class="os__h">
+        <h2 class="os__h2">OUR STORY</h2>
+        <!-- Это можно сделать через псевдоэлементы -->
+        <div class="os__polosa"></div>
+      </div>
+      <div class="os">
+        <div class="os_info">
+          <h3 class="os_info-h3">
+            Founded in 2011 by John Mathew<br />
+            Smith, <span>Konstruct</span> has become the<br />
+            number one construction management firm
+          </h3>
 
-                    <div class="oc__card">
-                        <div class="oc__card-p">
-                            <img class="oc__card-img" src="./img/card/p.png">
-                            <h3 calss="oc__card-h">PROJECT AND CONSTRUCTION MANAGEMENT</h3>
-                            <p class="oc__card-txt">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
-                        </div>
-                        <div class="oc__card-p">
-                            <img class="oc__card-img" src="./img/card/s.png">
-                            <h3 calss="oc__card-h">STRUCTURE AUDIT AND<br> MAINTENANCE</h3>
-                            <p class="oc__card-txt">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
-                        </div>
-                        <div class="oc__card-p">
-                            <img class="oc__card-img" src="./img/card/f.png">
-                            <h3 calss="oc__card-h">FACTORY CONSTRUCTION AND<br> MODELING</h3>
-                            <p class="oc__card-txt">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
-                        </div>
-                    </div>
-                </div>
+          <p class="os_info-txt">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.
+          </p>
+        </div>
+        <div class="os__img">
+          <!-- Зачем разные классы? -->
+          <div class="os__img-1">
+            <h2 class="os__img-h">
+              we<br />
+              plan
+            </h2>
+            <img src="./img/threeblc/OneImg.png" alt="#" />
+          </div>
+          <div class="os__img-2">
+            <h2 class="os__img-h">
+              we<br />
+              manage
+            </h2>
+            <img src="./img/threeblc/twoImg.png" alt="#" />
+          </div>
+          <div class="os__img-3">
+            <h2 class="os__img-h">
+              we<br />
+              build
+            </h2>
+            <img src="./img/threeblc/threeImg.png" alt="#" />
+          </div>
+        </div>
+      </div>
 
-                <div class="block6">
-                    <div class="block6__h">
-                        <p class="block6__h3">Want to build</p>
-                        <p class="block6__h3">something amazing?</p>
-                    </div>
-                    <div class="block6__btm">
-                        <button class="block6__btm-s">GET IN TOUCH</button>
-                    </div>
-                </div>
+      <div class="oc">
+        <div class="header__oc">
+          <!-- не обязательно здесь оборачивать каждый элемент в div  -->
+          <div class="oc__h">
+            <h2 class="oc__h2">OUR CAPABILITIES</h2>
+            <!-- Это можно сделать через псевдоэлементы -->
+            <div class="oc_pls"></div>
+          </div>
+          <div class="oc__txt">
+            <p class="oc__txt-p">
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+              nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
+              erat.
+            </p>
+          </div>
+          <div class="oc__btm">
+            <button class="os__btm">ALL SERVICES</button>
+          </div>
+        </div>
 
-                <div class="ns">
-                    <p class="ns__txt">Newsletter Signup</p>
-                    <input class="ns__inpt" placeholder="test@youremail.com">
-                    <button class="ns__btm">SIGNUP</button>
-                </div>
-            
-                <div class="all__info">
-            
-                    <div class="all__info-klp">
-                        <h6 class="all__info-h">COMPANY</h6>
-                        <p class="all__info-logo">konstru<img src="./img/tigl.png">t</p>
-                        <p class="all__info-klp-txt">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
-                    </div>
+        <!-- Лучше сделать обертку классом oc__cards, а oc__card перенести на внутренние элементы -->
+        <div class="oc__card">
+          <div class="oc__card-p">
+            <!-- на будущее - такие иконки лучше втыкать через svg -->
+            <img class="oc__card-img" src="./img/card/p.png" />
+            <h3 calss="oc__card-h">PROJECT AND CONSTRUCTION MANAGEMENT</h3>
+            <p class="oc__card-txt">
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+              nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
+              erat.
+            </p>
+          </div>
+          <div class="oc__card-p">
+            <img class="oc__card-img" src="./img/card/s.png" />
+            <h3 calss="oc__card-h">
+              STRUCTURE AUDIT AND<br />
+              MAINTENANCE
+            </h3>
+            <p class="oc__card-txt">
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+              nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
+              erat.
+            </p>
+          </div>
+          <div class="oc__card-p">
+            <img class="oc__card-img" src="./img/card/f.png" />
+            <h3 calss="oc__card-h">
+              FACTORY CONSTRUCTION AND<br />
+              MODELING
+            </h3>
+            <p class="oc__card-txt">
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+              nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
+              erat.
+            </p>
+          </div>
+        </div>
+      </div>
 
-                    
-                    <div class="all__info-links">
-                        
-                        <div class="all__info-links-a1">
-                        <p class="all__info-h1">LINKS</p>
-                        <a href="#">HOME</a>
-                        <a href="#">ABOUT</a>
-                        <a href="#">SERVICES</a>
-                        <a href="#">PROJECTS</a>
-                        <a href="#">CONTACT US</a>
-                        </div>
-                        <div class="all__info-links-a2">
-                        <a href="#">FAQ </a>
-                        <a href="#">TERMS </a>
-                        <a href="#">CAREERS</a>
-                        </div>
-                        <div class="all__info-links-a3">
-                        <a href="#">BLOG</a>
-                        <a href="#">PARTNERS</a>
-                        <a href="#">NEWS</a>
-                        </div>
-                    </div>
-                    
-                
-                <div class="all__info-cntkt">
-                    <h6 class="all__info-h">COMPANY</h6>
-                    <p>CONTACT US </p>
-                    <p> 213 Baker StreetOriel City Kounty 7000 KNW, Kountry Name</p>
-                    <p>+23 994 233 4022</p> 
-                    <p>info@konstruct.com</p>
-                </div>
-                
-                <div class="all__info-icon">
-                    <div class="icon">
-                        <img src="./img/icon/face.svg">
-                    </div>
-                    <div class="icon">
-                        <img src="./img/icon/twitter.svg">
-                    </div>
-                    <div class="icon">
-                        <img src="./img/icon/google.svg">
-                    </div>
-                </div>
-                </div>
-        </main>
-        <footer class="footer">
-            <p>© 2017 Konstruct Inc. Designed by Jane Kathryn Teo</p>
-        </footer>
+      <div class="block6">
+        <!-- можно не обораччивать все в дивы -->
+        <div class="block6__h">
+          <!-- 2 параграфа тут не нужны-->
+          <p class="block6__h3">Want to build</p>
+          <p class="block6__h3">something amazing?</p>
+        </div>
+        <div class="block6__btm">
+          <button class="block6__btm-s">GET IN TOUCH</button>
+        </div>
+      </div>
 
-    </body>
+      <div class="ns">
+        <p class="ns__txt">Newsletter Signup</p>
+        <!-- инпут и кнопку нужно обернуть в form, так как это форма -->
+        <input class="ns__inpt" placeholder="test@youremail.com" />
+        <button class="ns__btm">SIGNUP</button>
+      </div>
+
+      <div class="all__info">
+        <div class="all__info-klp">
+          <h6 class="all__info-h">COMPANY</h6>
+          <!-- svg -->
+          <p class="all__info-logo">konstru<img src="./img/tigl.png" />t</p>
+          <p class="all__info-klp-txt">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.
+          </p>
+        </div>
+
+        <div class="all__info-links">
+          <!-- Что значит a1, a2, a3? -->
+          <div class="all__info-links-a1">
+            <p class="all__info-h1">LINKS</p>
+            <a href="#">HOME</a>
+            <a href="#">ABOUT</a>
+            <a href="#">SERVICES</a>
+            <a href="#">PROJECTS</a>
+            <a href="#">CONTACT US</a>
+          </div>
+          <div class="all__info-links-a2">
+            <a href="#">FAQ </a>
+            <a href="#">TERMS </a>
+            <a href="#">CAREERS</a>
+          </div>
+          <div class="all__info-links-a3">
+            <a href="#">BLOG</a>
+            <a href="#">PARTNERS</a>
+            <a href="#">NEWS</a>
+          </div>
+        </div>
+
+        <div class="all__info-cntkt">
+          <!-- Этот тег тут зачем? В макете его нет -->
+          <h6 class="all__info-h">COMPANY</h6>
+          <p>CONTACT US</p>
+          <p>213 Baker StreetOriel City Kounty 7000 KNW, Kountry Name</p>
+          <!-- Телефон и почту обернуть в ссылки чтобы по ним можно было позвонить и отправить письмо. -->
+          <p>+23 994 233 4022</p>
+          <p>info@konstruct.com</p>
+        </div>
+
+        <div class="all__info-icon">
+          <!-- Иконки появляются как белые квадраты -->
+          <div class="icon">
+            <img src="./img/icon/face.svg" />
+          </div>
+          <div class="icon">
+            <img src="./img/icon/twitter.svg" />
+          </div>
+          <div class="icon">
+            <img src="./img/icon/google.svg" />
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <p>© 2017 Konstruct Inc. Designed by Jane Kathryn Teo</p>
+    </footer>
+  </body>
 </html>

@@ -1,619 +1,667 @@
-
 @font-face {
-    font-family: 'Bebas Nenene';
-    src: url("../fonts/ofont.ru_Bebas\ Neue.ttf");
-    font-weight: 600;
+  font-family: "Bebas Nenene";
+  src: url("../fonts/ofont.ru_Bebas\ Neue.ttf");
+  font-weight: 600;
 }
-@font-face{
-    font-family: 'Open sans' ;
-    src: url("../fonts/OpenSans/");
-    font-weight: 600;
-    font-weight: 400;
-} 
 
+/* Open sans не подключен */
+@font-face {
+  font-family: "Open sans";
+  src: url("../fonts/OpenSans/");
+  font-weight: 600;
+  /* должен быть 1 font-weight на правило */
+  font-weight: 400;
+}
 
 .container {
-    margin: 0 auto;
-    max-width: 1440px;
-    padding: 0 15px;
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 0 15px;
 }
+
+/* Обьедини медиа запросы с одинаковой точкой останова в один запрос */
 
 @media (max-width: 767px) {
-    .container {
-        max-width: none;
-    }
-
+  .container {
+    max-width: none;
+  }
 }
 
-.header__first{ 
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: flex-end;
-    max-width: 100%; 
-    height: 100vh;
-    background: url(../img/bg.png) center / cover no-repeat; 
-    -webkit-background-size: cover; 
-    background-size: cover;
-    min-width: 400px;
-    
+.header__first {
+  display: flex;
+  /* flex-direction: column; не нужен */
+  flex-direction: column;
+  justify-content: center;
+
+  /* align-items: center; */
+  align-items: flex-end;
+  max-width: 100%;
+  height: 100vh;
+  background: url(../img/bg.png) center / cover no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  /* Зачем  min-width? */
+  min-width: 400px;
 }
+
 .header__first-logo {
-    position: absolute;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 0 0 0 0;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /*  margin: 0 */
+  margin: 0 0 0 0;
 }
 
 .knstrkt__txt {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 40px 0 0 0;
-    left: 47.5%;
-    font-size: 16px;
-    font-weight: 600;
-    color: #fff;
-    text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0 0 0;
+  /* Сьедет на адаптиве, нужно ровнять по центру автоматически */
+  left: 47.5%;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
 }
-@media (max-width: 190px){
-    .knstrkt__txt {
-        display: flex;
-        flex-wrap: wrap;
-    }
-}
-.header__pwk{
-    font-family: 'Bebas Nenene';
-    font-weight: 600;
+@media (max-width: 190px) {
+  .knstrkt__txt {
     display: flex;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-    height: 60px;
-    color: #fff;
-    font-size: 60px;
-}
-.header__pwk-txt{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
-    font-family: 'Open sans'; 
-    font-size: 16px;
-    line-height: 19px;
-    color:#fff;
-    width: 100%;
-    height: 100%;
-    margin: 15px 0 0 0;
+  }
 }
-@media (max-width: 360px){
-    .header__pwk-txt {
-        margin: 25px 0 0 0;
-    }
+.header__pwk {
+  /* Задавай fallback шрифты, на случай если нет нужного */
+  font-family: "Bebas Nenene";
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  /* Зачем тут высота? */
+  height: 60px;
+  color: #fff;
+  font-size: 60px;
+}
+.header__pwk-txt {
+  /* Зачем в этом блоке флекс? Можно просто использовать параграф и text-align:center */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: "Open sans";
+  font-size: 16px;
+  /* line-height используй относительные значения (коэффициент или проценты) */
+  line-height: 19px;
+  color: #fff;
+  /* Зачем тут ширина? */
+  width: 100%;
+  /* Зачем тут высота? */
+  height: 100%;
+  /* margin: 15px 0 0 */
+  margin: 15px 0 0 0;
+}
+@media (max-width: 360px) {
+  .header__pwk-txt {
+    margin: 25px 0 0 0;
+  }
 }
 
-.header__sd{
-    position: absolute;
-    bottom: 0;
-    color: #fff;
-    left: 47.5%;
-    font-family: 'Open sans';
-    margin: 0 0 71px 0;
-
+.header__sd {
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  /* Сьедет на адаптиве, нужно ровнять по центру автоматически */
+  left: 47.5%;
+  font-family: "Open sans";
+  /* margin: 0 0 71px */
+  margin: 0 0 71px 0;
 }
 .navigation {
-    position: sticky;
-    top: 0;
-    display: flex;
-    justify-content: space-around;
-    font-family: 'open sans';
-    width: 100%;
-    height: 65px;
-    border: 1px solid #E6E6E6;
-    margin: 0 auto;
-    background: #fff;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  font-family: "open sans";
+  width: 100%;
+  height: 65px;
+  border: 1px solid #e6e6e6;
+  margin: 0 auto;
+  background: #fff;
+  /* У блока нет z-index, из-за этого он сливается с другими при прокрутке */
 }
 
 .nav__logo-img {
-    margin: 20px 100px 0px 200px;
+  margin: 20px 100px 0px 200px;
 }
 .nav__txt {
-    font-family: 'OpenSans';
-    font-weight: 400;
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content:space-around;
-    flex-wrap: wrap;
-    font-size: 12px;
-    line-height: 14px;
+  font-family: "OpenSans";
+  font-weight: 400;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  font-size: 12px;
+  line-height: 14px;
 }
 .nav__a {
-    color: #48555B;
+  color: #48555b;
 }
 .nav__txt a:nth-child(2) {
-    color: #00A4E5;
+  color: #00a4e5;
 }
 
-.os__h{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 50px 0 0 0;
+.os__h {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 50px 0 0 0;
 }
-.os__h2{
-    width:121px;
-    height: 25px;
-    text-align: center;
+.os__h2 {
+  width: 121px;
+  height: 25px;
+  text-align: center;
 }
 .os__polosa {
-    width: 50px;
-    height: 2px;
-    border: 2px solid #00A4E5;
-    margin:0 0 0 10px;
+  width: 50px;
+  height: 2px;
+  border: 2px solid #00a4e5;
+  margin: 0 0 0 10px;
 }
 
-.os{
+.os {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 941px;
+  height: 344px;
+  margin: 0 auto;
+}
+@media (max-width: 940px) {
+  .os {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
-    width: 941px;   
-    height: 344px;  
-    margin: 0 auto;
+    width: 100%;
+  }
 }
-@media (max-width:940px){
-    .os{
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-    }
-    
-}
-@media (max-width:767px) {
-    .os {
-        width: 100%;
-    }
+@media (max-width: 767px) {
+  .os {
+    width: 100%;
+  }
 }
 
-.os_info{
-    display: flex;
-    width: 50%;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start;
+.os_info {
+  /* Зачем здесь флексы? */
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
 }
+
+/* Классы лучше не называть названием тега, используй семантическое значение. В данном случае  os_info-title*/
 .os_info-h3 {
-    font-size: 20px;
-    line-height: 23px;
-    color: #48555B;
-    padding: 65px 0 0 0;
+  font-size: 20px;
+  line-height: 23px;
+  color: #48555b;
+  padding: 65px 0 0 0;
 }
 .os_info-h3 span {
-    color:#16ACE8;
+  color: #16ace8;
 }
 
+.os_info-txt {
+  display: flex;
+  flex-wrap: wrap;
+  width: 405px;
+  height: 115px;
+  font-size: 13px;
+  line-height: 23px;
+  margin: 0px 0 0 0;
+  color: #48555b;
+}
+@media (max-width: 767px) {
+  .os_info-txt {
+    width: 100%;
+  }
+}
 
-.os_info-txt{
-    display: flex;
-    flex-wrap: wrap;
-    width: 405px;
-    height: 115px;
-    font-size: 13px;
-    line-height: 23px;
-    margin: 0px 0 0 0;
-    color: #48555B;
-}
-@media (max-width:767px) {
-    .os_info-txt{
-        width: 100%;
-    }
-}
 .os__img {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  width: 50%;
+  bottom: 0;
+}
+@media (max-width: 940px) {
+  .os {
     display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
     flex-wrap: wrap;
-    width: 50%;
-    bottom: 0;
+  }
 }
-@media (max-width:940px){
-    .os{
-        display: flex;
-        flex-wrap: wrap;
-    }
-    
-}
-@media (max-width:767px){
-    
-
+@media (max-width: 767px) {
 }
 .os__img-h {
-    position:absolute; 
-    font-size: 24px;
-    line-height: 29px;
-    color: #fff;
-    text-transform: uppercase;
+  position: absolute;
+  font-size: 24px;
+  line-height: 29px;
+  color: #fff;
+  text-transform: uppercase;
 }
 
+/* Если это не ссылка то тут не нужен ховер. Плюс, если ховер все таки нужен то сделай его на всю карточку, а не только на текст */
 .os__img-h:hover {
-    text-decoration: underline;
-    text-decoration-color: #00A4E5 ;
-    cursor: pointer;
-    
+  text-decoration: underline;
+  text-decoration-color: #00a4e5;
+  cursor: pointer;
 }
 .oc {
-    margin: 0 auto;
-    position: relative;
-    top:120px;
-    width: 940px;
-    height: 446px;
-    
+  margin: 0 auto;
+  position: relative;
+  top: 120px;
+  width: 940px;
+  height: 446px;
 }
-@media (max-width:950px){
-    .oc {
-        width: 100%;
-    }
+@media (max-width: 950px) {
+  .oc {
+    width: 100%;
+  }
 }
-@media (max-width:930px){
-    .oc{
-        width: 100%;
-        
-    }
+@media (max-width: 930px) {
+  .oc {
+    width: 100%;
+  }
 }
-@media (max-width:767px){
-    .oc {
-        width: 100%;
-        margin: 70px 0 0 0;
-    }
+@media (max-width: 767px) {
+  .oc {
+    width: 100%;
+    margin: 70px 0 0 0;
+  }
 }
-@media (max-width:560px){
-    .oc{
-        width: 100%;
-        margin: 210px 0 0 0
-    }
+@media (max-width: 560px) {
+  .oc {
+    width: 100%;
+    margin: 210px 0 0 0;
+  }
 }
 .header__oc {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
-@media (max-width:760px){
-    .header__oc {
-        display: flex;
-        flex-wrap: wrap;
-    }
+@media (max-width: 760px) {
+  .header__oc {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .oc__h {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .oc__h2 {
-    font-family: 'OpenSans';
-    font-weight: 600;
-    font-size: 18px;
-    color: #48555B;
-}
-.oc_pls{
-    border: 2px solid #00A4E5;
-    width: 50px;
-    position: relative;
-    top: -10px;
-}
-@media (max-width:580px){
-    .oc_pls{
-        margin: 10px 0 -10px 0px;
+  /* Если шрифт используется для специфических элементов, можно создать класс который будет применять этот шрифт
+    и потом вставлять его где нужно. Например:
+    
+    .alt-font{
+        font-family:"Open Sans";
     }
+    */
+  font-family: "OpenSans";
+  font-weight: 600;
+  font-size: 18px;
+  color: #48555b;
+}
+.oc_pls {
+  border: 2px solid #00a4e5;
+  width: 50px;
+  position: relative;
+  top: -10px;
+}
+@media (max-width: 580px) {
+  .oc_pls {
+    margin: 10px 0 -10px 0px;
+  }
 }
 .oc__txt {
-    display: flex;
-    justify-content: space-between;
-    width: 405px;
-    height: 38px;
-    
+  /* Ненужные фиксированые значения ширины и высоты. От высоты можно вобще избавиться, ширину лучше задавать 
+    max-width:405px;
+    width:100%;
+    */
+  display: flex;
+  justify-content: space-between;
+  width: 405px;
+  height: 38px;
 }
 .oc__txt-p {
-    font-family: 'OpenSans';
-    font-size: 11px;
-    line-height: 19px;
-    color: #48555B;
+  font-family: "OpenSans";
+  font-size: 11px;
+  line-height: 19px;
+  color: #48555b;
 }
 .os__btm {
-    width: 150px;
-    height: 40px;
-    background: #00A4E5;
-    color:#fff;
-    text-align: center;
-    transition-duration: 0.5s;
+  width: 150px;
+  height: 40px;
+  background: #00a4e5;
+  color: #fff;
+  text-align: center;
+  transition-duration: 0.5s;
 }
 .os__btm:hover {
-    top: 2px;
-    background-color: #18b5a4;
+  top: 2px;
+  background-color: #18b5a4;
 }
 .oc__card {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    margin: 80px 0 0 0;
-    
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  /*  margin: 80px 0 0 */
+  margin: 80px 0 0 0;
 }
 
 .oc__card-p {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    width: 295px;
-    height: 300px;
-    border: 1px solid #E6E6E6;
-    padding: 0 0 80px 0;
+  /* Здесь флексы не нужны, нет внутренних отступов как на макете */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 295px;
+  height: 300px;
+  border: 1px solid #e6e6e6;
+  padding: 0 0 80px 0;
 }
-.oc__card-img{
-    width:65px;
-    height:75px;
+.oc__card-img {
+  width: 65px;
+  height: 75px;
 }
 .oc__card-h {
-    display: flex;
-    flex-wrap: wrap;
-    width: 250px;
-    height: 48px;
-    font-family: 'OpenSans';
-    font-style: bold;
-    font-size: 16px;
-    line-height: 24px;
-    color: #48555B;
+  /* А здесь флексы зачем?)) */
+  display: flex;
+  flex-wrap: wrap;
+  width: 250px;
+  height: 48px;
+  font-family: "OpenSans";
+  font-style: bold;
+  font-size: 16px;
+  line-height: 24px;
+  color: #48555b;
 }
 .oc__card-txt {
-    display: flex;
-    justify-content: space-between;
-    font-family: 'OpenSans';
-    font-size: 13px;
-    line-height: 23px;
-    color:#48555B;
+  /* А здесь флексы зачем?)) */
+  display: flex;
+  justify-content: space-between;
+  font-family: "OpenSans";
+  font-size: 13px;
+  line-height: 23px;
+  color: #48555b;
 }
 
 .block6 {
-    background: url(../img/bg6/bg6.png);
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    height: 499px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 115px 0 0 0;
+  background: url(../img/bg6/bg6.png);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  /* На адаптиве картинка уезжает вверх и появляется пустое пространство. Используй background-size:cover */
+  background-size: 100% auto;
+  height: 499px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 115px 0 0 0;
 }
-@media (max-width:880px){
-    .block6{
-        width: 100%;
-        margin: 275px 0 0 0;
-    }
+@media (max-width: 880px) {
+  .block6 {
+    width: 100%;
+    margin: 275px 0 0 0;
+  }
 }
-@media (max-width:800px){
-    .block6{
-        width: 100%;
-        margin: 335px 0 0 0;
-    }
+@media (max-width: 800px) {
+  .block6 {
+    width: 100%;
+    margin: 335px 0 0 0;
+  }
 }
-@media (max-width:600px){
-    .block6{
-        width: 100%;
-        margin: 670px 0 0 0;
-    }
+@media (max-width: 600px) {
+  .block6 {
+    width: 100%;
+    margin: 670px 0 0 0;
+  }
 }
 .block6__h {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    flex-wrap: wrap;
-    width: 350px;
-    height: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 350px;
+  height: 72px;
 }
-.block6__h3{
-    font-family: 'OpenSans';
-    font-weight: 600;
-    font-size: 30px;
-    line-height: 36px;
-    color: #48555B;
+.block6__h3 {
+  font-family: "OpenSans";
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 36px;
+  color: #48555b;
 }
 .block6__btm {
-    margin: 35px 0 0 0;
+  margin: 35px 0 0 0;
 }
-.block6__btm-s{
-    text-align: center;
-    width:150px;
-    height: 40px;
-    background: #00A4E5;
-    transition-duration: 1s;
-    font-family: 'OpenSans';
-    font-weight: 600;
-    font-size: 13px;
-    color:#FFFFFF;
+.block6__btm-s {
+  text-align: center;
+  width: 150px;
+  height: 40px;
+  background: #00a4e5;
+  transition-duration: 1s;
+  font-family: "OpenSans";
+  font-weight: 600;
+  font-size: 13px;
+  color: #ffffff;
 }
 .block6__btm-s:hover {
-    top: 2px;
-    background-color: #18b5a4;
+  top: 2px;
+  background-color: #18b5a4;
 }
 .ns {
-    width: 100%;
-    height: 100px;
-    background:#171819;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+  width: 100%;
+  height: 100px;
+  background: #171819;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .ns__txt {
-    font-family: 'OpenSans';
-    font-weight: 600;
-    font-size: 22px;
-    color: #FFFFFF;
-    padding: 0px 70px 0 0px;
+  font-family: "OpenSans";
+  font-weight: 600;
+  font-size: 22px;
+  color: #ffffff;
+  padding: 0px 70px 0 0px;
 }
 
 .ns__inpt {
-    width: 250px;
-    height: 40px;
+  width: 250px;
+  height: 40px;
 }
 .ns__btm {
-    width: 150px;
-    height: 40px;
-    background: #00A4E5;
-    text-align: center;
-    font-family: 'OpenSans';
-    font-weight: 600;
-    font-size: 13px;
-    color: #FFFFFF;
-    transition-duration: 0.7s;
+  width: 150px;
+  height: 40px;
+  background: #00a4e5;
+  text-align: center;
+  font-family: "OpenSans";
+  font-weight: 600;
+  font-size: 13px;
+  color: #ffffff;
+  transition-duration: 0.7s;
+
+  /* Для увеличения букв используй text-transform */
 }
-.ns__btm:hover{ 
-    top: 2px;
-    background-color: #18b5a4;
+.ns__btm:hover {
+  /* Нет position, top не изменится */
+  top: 2px;
+  background-color: #18b5a4;
 }
 .all__info {
-    width: 100%;
-    height: 240px;
-    background: #141A20;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    
-}
-.all__info-test{
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    width: 100%;
-    flex-wrap: wrap;
-
+  /* Нет ограничения ширины контента */
+  width: 100%;
+  height: 240px;
+  background: #141a20;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-.all__info-klp{
-    display:flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 250px;
-    height: 148px;
+/* Зачем нужны эти стили? */
+.all__info-test {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 100%;
+  flex-wrap: wrap;
 }
-.all__info-h{
-    font-family: 'OpenSans';
-    font-size: 11px;
-    color: white;
-    margin: 0 0 -30px 0;
+
+.all__info-klp {
+  /* Опять ненужные флексы */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 250px;
+  height: 148px;
+}
+.all__info-h {
+  font-family: "OpenSans";
+  font-size: 11px;
+  color: white;
+  margin: 0 0 -30px 0;
 }
 .all__info-logo {
-    margin: 40px 0 10px 0;
-    font-size: 16px;
-    font-weight: 600;
-    color: #fff;
-    text-transform: uppercase;
+  margin: 40px 0 10px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
 }
 .all__info-klp-txt {
-    font-family: 'OpenSans';
-    font-size: 11px;
-    line-height: 19px;
-    color: #fff;
-    margin: -10px 0 20px 0;
+  font-family: "OpenSans";
+  font-size: 11px;
+  line-height: 19px;
+  color: #fff;
+  margin: -10px 0 20px 0;
 }
-.all__info-links{
-    width: 262px;
-    height: 150px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+.all__info-links {
+  width: 262px;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
-.all__info-h1{
-    font-family: 'OpenSans';
-    font-size: 11px;
-    color: white;
-    margin: -15px 0 10px 0;
+.all__info-h1 {
+  font-family: "OpenSans";
+  font-size: 11px;
+  color: white;
+  margin: -15px 0 10px 0;
 }
 .all__info-links-a1 {
-    width: 76px;
-    height: 125px;
-    display: flex;
-    flex-direction: column;
-    font-family: 'OpenSans';
-    font-size: 11px;
-    line-height: 25px;
-    color: #fff;
-    margin: 0 0 0 0;
+  width: 76px;
+  height: 125px;
+  display: flex;
+  flex-direction: column;
+  font-family: "OpenSans";
+  font-size: 11px;
+  line-height: 25px;
+  color: #fff;
+  margin: 0 0 0 0;
 }
-.all__info-links a{
-    color: #fff;
-    transition-duration: 0.5s;
+.all__info-links a {
+  color: #fff;
+  transition-duration: 0.5s;
 }
 .all__info-links a:hover {
-    
-    color:aqua;
+  color: aqua;
 }
 .all__info-links-a2 {
-    width: 52px;
-    height: 75px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    font-family: 'OpenSans';
-    font-size: 11px;
-    line-height: 25px;
-    color: #fff;
-    margin: 0 0 -20px 0;
+  width: 52px;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-family: "OpenSans";
+  font-size: 11px;
+  line-height: 25px;
+  color: #fff;
+  margin: 0 0 -20px 0;
 }
 .all__info-links-a3 {
-    width: 62px;
-    height: 75px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    font-family: 'OpenSans';
-    font-size: 11px;
-    line-height: 25px;
-    margin:0 0 -20px 0;
+  width: 62px;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-family: "OpenSans";
+  font-size: 11px;
+  line-height: 25px;
+  margin: 0 0 -20px 0;
 }
 
 .all__info-cntkt {
-    width: 141px;
-    height: 158px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  width: 141px;
+  height: 158px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .all__info-cntkt p {
-    margin: 0 0 -28px 0px;
-    color: #fff;
-    font-family: 'OpenSans';
-    font-size: 11px;
-    line-height: 16px;
+  margin: 0 0 -28px 0px;
+  color: #fff;
+  font-family: "OpenSans";
+  font-size: 11px;
+  line-height: 16px;
 }
 .all__info-icon {
-    width: 87px;
-    height: 13px;
-    display: flex;
-    justify-content: space-between;
-    margin: 70px 0 0 0px;
+  width: 87px;
+  height: 13px;
+  display: flex;
+  justify-content: space-between;
+  margin: 70px 0 0 0px;
 }
 .all__info-icon div {
-    color: white;
+  color: white;
 }
 .footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    height: 60px;
-    background: #171819;
-    color: white;
+  /* Вместо флексов можно обойтись text-align:center */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 60px;
+  background: #171819;
+  color: white;
 }
+
+/* 
+
+АДАПТИВ
+
+1. Выноси все медиа запросы в низ страницы, чтобы ты знал где они у тебя находятся.
+2. Не используй много брейкпоинтов (медиа точек останова). Используй 2-3 основные (мобильный, планшет, десктоп) и равняйся на них. В крайнем случае можешь добавить еще пару.
+3. Липкий хедер - при уменьшении размера экрана логотип имеет большой отступ слева. На мобильном ссылки выстраиваются друг под другом, по ним будет сложно попасть пальцем.
+4. Блок os - прилипает к краям страницы, картинки прилипают друг к другу, картинки выстраиваются в треугольник - так нельзя
+    остается фиксированая высота.
+5. Блок oc - элементы прилипают друг к другу, не имеют отступов сверху, карточки остаются той же ширины. 
+6. Блок block6 - картинка на фоне не должна уменьшаться и оставлять пустой фон.
+7. Блок ns - нет отступов, кнопка и поле должны быть на всю ширину.
+8. Блок all__info - элементы наезжают друг на друга, нет отступов.
+9. Появляется горизонтальная прокрутка на мобильном.
+*/
